@@ -21,6 +21,7 @@ import com.lib.listener.INetworkListener;
 import com.lib.listener.OnStartDragListener;
 import com.lib.model.FlickrResponse;
 import com.lib.model.Photo;
+import com.lib.util.NetworkUtil;
 
 import java.util.List;
 
@@ -70,7 +71,12 @@ public class ImageSearchFragment extends BaseProgressFragment implements INetwor
                 if (!TextUtils.isEmpty(searchString)) {
                     //Destroy Loader during new search to remove cached data
                     ImageListLoaderCallback.destroyLoader(getLoaderManager());
-                    performSearch(searchString);
+                    if(NetworkUtil.isNetworkAvailable(getContext())) {
+                        performSearch(searchString);
+                    } else {
+                        Snackbar.make(getView(), "No Network Available", Snackbar.LENGTH_SHORT).show();
+                    }
+
                 } else {
                     Snackbar.make(getView(), "Please enter a search string", Snackbar.LENGTH_SHORT).show();
                 }

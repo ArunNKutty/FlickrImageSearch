@@ -12,7 +12,6 @@ import com.imagesearch.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
  *
  * Use the {@link ImageDetailFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -32,7 +31,6 @@ public class ImageDetailFragment extends Fragment {
      * @param imageUrl Parameter .
      * @return A new instance of fragment ImageDetailFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ImageDetailFragment newInstance(String imageUrl) {
         ImageDetailFragment fragment = new ImageDetailFragment();
         Bundle args = new Bundle();

@@ -6,5 +6,6 @@ package com.imagesearch.apiclient;
  * @author akutty
  */
 public interface BaseConstants {
+    //Check with Mock Data
     String BASE_URL = "http://mentalligent.com:4000";
 }
